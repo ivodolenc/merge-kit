@@ -1,0 +1,30 @@
+{
+  "name": "merge-kit",
+  "version": "1.0.0",
+  "description": "JavaScript object handler with deep merge support.",
+  "author": "Ivo Dolenc",
+  "license": "MIT",
+  "repository": "ivodolenc/merge-kit",
+  "homepage": "https://github.com/ivodolenc/merge-kit",
+  "funding": "https://github.com/sponsors/ivodolenc",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "kit",
+    "merge",
+    "defaults",
+    "merge-kit",
+    "merge-config",
+    "object-merge",
+    "merge-defaults",
+    "deep-merge",
+    "javascript",
+    "objects"
+  ],
+  "scripts": {
+    "merge": "node scripts/merge.js"
+  }
+}
