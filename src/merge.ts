@@ -1,7 +1,10 @@
-const isObject = v => v && typeof v === 'object'
+import type { Merge } from './types'
 
-export const merge = (objects, overwrite) => {
-  return objects.reduce((prev, curr) => {
+const isObject = (val: any): val is object =>
+  Object.prototype.toString.call(val) === '[object Object]'
+
+const merge: Merge = (objects, overwrite) => {
+  return objects.reduce((prev: any, curr: any) => {
     for (let k of Object.keys(curr)) {
       if (Array.isArray(prev[k]) && Array.isArray(curr[k])) {
         if (!overwrite) prev[k] = [...prev[k], ...curr[k]]
@@ -13,3 +16,5 @@ export const merge = (objects, overwrite) => {
     return prev
   }, {})
 }
+
+export { merge }

@@ -1,4 +1,4 @@
-import { merge } from '../index.js'
+import { merge } from '../src'
 
 const o1 = {
   a: 'merge',
