@@ -1,16 +1,25 @@
 {
   "name": "merge-kit",
-  "version": "1.0.0",
-  "description": "JavaScript object handler with deep merge support.",
+  "version": "1.1.0",
+  "description": "A tiny object handler with deep merge support.",
   "author": "Ivo Dolenc",
   "license": "MIT",
   "repository": "ivodolenc/merge-kit",
   "homepage": "https://github.com/ivodolenc/merge-kit",
   "funding": "https://github.com/sponsors/ivodolenc",
-  "type": "module",
-  "main": "index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./*": "./*"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
-    "index.js"
+    "dist"
   ],
   "keywords": [
     "kit",
@@ -25,6 +34,12 @@
     "objects"
   ],
   "scripts": {
-    "merge": "node scripts/merge.js"
+    "merge": "tsx scripts/merge.ts",
+    "build": "tsup src/index.ts --dts --format esm,cjs",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "typescript": "^4.9.3"
   }
 }

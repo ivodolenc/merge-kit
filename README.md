@@ -1,39 +1,44 @@
 <h1 align="center">Merge Kit</h1>
 
-<p align="center">JavaScript object handler with deep merge support.</p>
+<p align="center">A tiny object handler with deep merge support.</p>
 
 ## Features
 
-- **Zero dependencies!** Nothing! None!
+- **Zero dependencies!**
+- Ultralight! **~330bytes** min
+- Integrated TypeScript support
+- Flexible and user friendly API
+- Allows _module_ and _commonjs_ imports
 - Supports deep merge with multiple sources
-- Provides Combine and Overwrite methods
-- Ultralight & Really Fast
-- Less than **300 bytes** minified
+- Provides _combine_ and _overwrite_ methods
+- Really fast
 
 ## Installation
 
 ```sh
-yarn add -D merge-kit
+npm i -D merge-kit
 ```
 
-```sh
-npm i -D merge-kit
+```js
+// module
+import { merge } from 'merge-kit'
+```
+
+```js
+// commonjs
+const { merge } = require('merge-kit')
 ```
 
 ## API
 
 ### merge()
 
-- Type: `Function`
-
-Deeply merges multiple objects into one source.
-
 ```js
 /**
- * @function
- * @param {Array} objects - Array of objects.
- * @param {Boolean} overwrite - Enables overwrite mode.
- * @return {Object} Returns merged object.
+ * Deeply merges multiple objects into one source.
+ *
+ * @param objects Array of objects, requires at least 2 objects.
+ * @param [overwrite] Enables overwrite mode (optional).
  */
 merge(objects, overwrite)
 ```
